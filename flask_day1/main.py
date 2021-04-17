@@ -7,9 +7,9 @@ import bson
 import json
 from bson import json_util
 
-######?k@g85)f4Zy#x*/
+######?k@g85)f4Zy#x*
 ######xy_db ,user
-client = pymongo.MongoClient("mongodb+srv://username:password@cluster-yu.ixch7.gcp.mongodb.net/xy_db?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://username:password@y")
 # db = client['xy_db']
 db = client.xy_db
 collection = db.user
@@ -42,7 +42,7 @@ if __name__ == '__main__':
 # windows
 #senv :FLASK_APP = "hello.py" flask run
 
-# mongodb+srv://<username>:<password>@cluster-yu.ixch7.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+# mongodb+srv://<username>:<password>@y
 # myclient = pymongo.MongoClient@(y)
 # print(myclient.database_names())
 
