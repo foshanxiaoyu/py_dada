@@ -9,7 +9,7 @@ from bson import json_util
 
 ######?k@g85)f4Zy#x*/
 ######xy_db ,user
-client = pymongo.MongoClient("mongodb+srv://dev11:dev1234@cluster-yu.ixch7.gcp.mongodb.net/xy_db?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://username:password@cluster-yu.ixch7.gcp.mongodb.net/xy_db?retryWrites=true&w=majority")
 # db = client['xy_db']
 db = client.xy_db
 collection = db.user
