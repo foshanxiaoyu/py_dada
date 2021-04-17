@@ -43,7 +43,7 @@ if __name__ == '__main__':
 #senv :FLASK_APP = "hello.py" flask run
 
 # mongodb+srv://<username>:<password>@cluster-yu.ixch7.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-# myclient = pymongo.MongoClient(mongodb+srv://200768259xy@gmail.com:Lllooo999@cluster-yu.ixch7.gcp.mongodb.net/xy_db?retryWrites=true&w=majority)
+# myclient = pymongo.MongoClient@(y)
 # print(myclient.database_names())
 
 
