@@ -63,6 +63,38 @@ def is_prime(i):
         if i%y == 0 :
             return False
     return True        
+# 5.计算从1到N的平方和
+def demo_p005(n):
+    result = 0
+    for i in range(1,n+1):
+        result += i*i 
+        if i<n:
+            print(f'{i}*{i}+',end='')
+        else:
+            print(f'{i}*{i}',end='')
+    print(f'= {result}')
+    print("\033[0;36;40m=======P005华丽的分割线===========END\033[0m")
+
+# 6.计算LIST的和
+def demo_p006(data:list):
+    totle = 0
+    for x in data:
+        totle += x
+        if x==data[-1]:
+            print(f'{x}',end='')
+        else:
+            print(f'{x}+',end='')
+    print(f'={totle}') #等效 print(sum(data))
+    print("\033[0;36;40m=======P006华丽的分割线===========END\033[0m")
+
+# 7.数字范围内的所有偶数
+def demo_p007(s:int,e:int):
+    db =[]
+    for x in range(s,e+1):
+        if x%2==0:
+            db.append(x)
+    print(db)
+    print("\033[0;36;40m=======P007华丽的分割线===========END\033[0m")
 
 
 
@@ -73,3 +105,6 @@ if __name__=="__main__":
     demo_p003(6.78)
     demo_p004(6,19)
     demo_p0004(6,19)
+    demo_p005(6)
+    demo_p006([3,35,62,4,1])
+    demo_p007(5,20)
