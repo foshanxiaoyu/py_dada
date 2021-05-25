@@ -143,6 +143,32 @@ def demo_p011():
     print("\033[0;36;40m=======P011华丽的分割线===========END\033[0m")
 
 
+    
+# 12.读取文件中记录排序后按格式输出 
+def demo_p012():
+    # read
+    datas = []
+    f = open('students_grade.txt','r')
+    # datas = f.read()
+    for line in f:
+        line = line[:-1]
+        datas.append(line.split(','))
+    print(datas)
+    # sort
+    datas_sort = sorted(datas,key= lambda x:int(x[3]),reverse=True)
+    # datas_sort = sorted(datas,key= lambda x:int(x[2]))
+    print(datas_sort)
+    # write
+    fout = open('students_sort.txt','w')
+    for data_line in datas_sort:
+        fout.write(','.join(data_line)+'\n')
+    fout.close()
+    print("\033[0;36;40m=======P012华丽的分割线===========END\033[0m")
+
+    
+    
+    
+    
 if __name__=="__main__":
     # demo_p001()
     # demo_p002(6)
@@ -157,3 +183,4 @@ if __name__=="__main__":
     demo_p009([10,20,30,40,10,20,40,50])
     demo_p010([10,20,30,40,10,20,40,50])
     demo_p011()
+    demo_p012()
