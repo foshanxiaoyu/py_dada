@@ -96,7 +96,51 @@ def demo_p007(s:int,e:int):
     print(db)
     print("\033[0;36;40m=======P007华丽的分割线===========END\033[0m")
 
+# 8.List remove multiple element
+def demo_p008(data1:list,data2:list):
+    print(f'数组1：{data1},  数组2：{data2}')
+    for i in data2:
+        data1.remove(i)
+    print(f'删除多个元素后的数组：{data1}')
+    print("\033[0;36;40m=======P008华丽的分割线===========END\033[0m")
 
+def demo_p0008(data1:list,data2:list):
+    data = [i for i in data1 if i not in data2]
+    print(data)
+    print("\033[0;36;40m=======P0008华丽的分割线===========END\033[0m")
+
+# 9.list中去重 source list unique_list
+def demo_p009(data1:list):
+    db =[]
+    for i in data1:
+        if i not in db:
+            db.append(i)
+    print(f'输入的数据：{data1}')
+    print(f'去重后的数据：{db}',end='\n')
+    print(f'还可以用list(set(source_list))实现去重：',list(set(data1)))
+    print("\033[0;36;40m=======P009华丽的分割线===========END\033[0m")
+
+
+# 10.list 排序
+def demo_p010(data1:list):
+    print(f'source list:{data1}')
+    # data=list(set(data1))
+    # data.sort()
+    print(f'source_list sorted and unique:{sorted(list(set(data1)))}')
+    print("\033[0;36;40m=======P010华丽的分割线===========END\033[0m")
+
+# 11.复杂列表，元素 字典、元组
+def demo_p011():
+    students = [
+        {'sno':101,'sname':'小张','sgrade':88},
+        {'sno':102,'sname':'小王','sgrade':77},
+        {'sno':103,'sname':'小李','sgrade':99},
+        {'sno':104,'sname':'小赵','sgrade':66},
+    ]
+    students_sort = sorted(students,key= lambda x:x['sgrade'],reverse=True)
+    print(students)
+    print(students_sort)
+    print("\033[0;36;40m=======P011华丽的分割线===========END\033[0m")
 
 
 if __name__=="__main__":
@@ -108,3 +152,8 @@ if __name__=="__main__":
     demo_p005(6)
     demo_p006([3,35,62,4,1])
     demo_p007(5,20)
+    demo_p008([3,5,8,9,7,11,13,15,17],[7,11])
+    demo_p0008([3,5,8,9,7,11,13,15,17],[7,11])
+    demo_p009([10,20,30,40,10,20,40,50])
+    demo_p010([10,20,30,40,10,20,40,50])
+    demo_p011()
