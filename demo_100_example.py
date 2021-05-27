@@ -165,7 +165,79 @@ def demo_p012():
     fout.close()
     print("\033[0;36;40m=======P012华丽的分割线===========END\033[0m")
 
-    
+ # 13.read file 输出max，min,avg 最低分，平均公
+def demo_p013():
+    scores = []
+    f = open('static/students_grade.txt','r')
+    for line in f:
+        line = line[:-1]
+        fields = line.split(',')
+        scores.append(int(fields[-1]))
+    f.close()
+    max_score = max(scores)
+    min_score = min(scores)
+    avg_score = round(sum(scores)/len(scores),2)
+    print(f'最高分：{max_score}，最低分：{min_score},平均分：{avg_score}')
+    print("\033[0;36;40m=======P013华丽的分割线===========END\033[0m")
+
+# 14.统计文件中重复的char
+def demo_p014():
+    char_count = {}
+    # word = '鸡'
+    fd = open('static/jjj.txt','r',encoding='UTF-8')
+    for line in fd:
+        line = line[:-1]
+        chars = line.split()
+        for char in chars:
+            if char not in char_count:
+                char_count[char] = 0
+            char_count[char] += 1
+    print(char_count)
+    print("\033[0;36;40m=======P014华丽的分割线===========END\033[0m")
+
+# P0014.
+
+def demo_p0014():
+
+# -*- coding: utf-8 -*-
+# 打开文件
+    fd = open('static/jjj.txt','r',encoding='UTF-8')
+    content=fd.readlines()
+    contentLines=''
+ 
+    characers=[]  #存放不同字的总数
+    rate={}  #存放每个字出现的频率
+ 
+# 依次迭代所有行
+    for line in content:
+    # 去除空格
+        line=line.strip()
+    #如果是空行，则跳过
+        if len(line)==0:
+            continue
+        contentLines = contentLines + line
+    # 统计每一字出现的个数
+    for x in range(0,len(line)):
+        # 如果字符第一次出现 加入到字符数组中
+        if not line[x] in characers:
+            characers.append(line[x])
+        # 如果是字符第一次出现 加入到字典中
+        if line[x] not in rate:
+            rate[line[x]]=1
+        #出现次数加一
+        rate[line[x]]+=1
+ 
+    rate=sorted(rate.items(), key=lambda e:e[1], reverse=True)
+# 对字典进行倒数排序 从高到低 其中e表示dict.items()中的一个元素，
+# e[1]则表示按 值排序如果把e[1]改成e[0]，那么则是按键排序，
+# reverse=False可以省略，默认为升序排列
+    print('全文共有%d个字'%len(contentLines))
+    print('一共有%d个不同的字'%len(characers))
+    print()
+    for i in rate:
+        print("[",i[0],"] 共出现 ",  i[1], "次")
+ 
+    fd.close()   
     
     
     
@@ -184,3 +256,6 @@ if __name__=="__main__":
     demo_p010([10,20,30,40,10,20,40,50])
     demo_p011()
     demo_p012()
+    demo_p013()
+    demo_p014()
+    demo_p0014()
